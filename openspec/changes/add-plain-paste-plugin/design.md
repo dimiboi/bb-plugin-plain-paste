@@ -20,7 +20,7 @@ Greenfield repo; only OpenSpec files exist. See proposal.md for motivation. bb 0
 2. **Read with `navigator.clipboard.readText()`.** It returns text only, so images are never seen. bb's docs forbid it for writes, but no read API exists and a key press gives it focus. On rejection or empty text, show a toast and insert nothing.
 3. **Layout fallback decided by a check, not by listing layouts.** The owner checks on the Russian layout whether macOS reports `key` "v" or "м" for ⇧⌘V. If "v", keep the command as is. If "м", replace the shortcut path with a content-script `keydown` listener matching `event.code === "KeyV"` with ⌘⇧, and call the same insert path. Per-layout extra shortcuts were rejected because they only cover listed layouts.
 4. **Pin `engines`** to `bb >=0.46` and `bbPluginSdk >=0.6.49` because the API is `experimental_`.
-5. **One source file plus one test.** The scaffold is trimmed to the `bb.app` entry; the server entry stays only if the manifest requires one (`bb.server` is a required field in the manifest schema), reduced to a no-op.
+5. **The `bb.app` entry, one pure module and one test.** The scaffold is trimmed to those; the server entry stays only if the manifest requires one (`bb.server` is a required field in the manifest schema), reduced to a no-op.
 
 ## Risks / Trade-offs
 

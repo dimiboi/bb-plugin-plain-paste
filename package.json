@@ -1,0 +1,39 @@
+{
+  "name": "bb-plugin-plain-paste",
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "bb": ">=0.46",
+    "bbPluginSdk": ">=0.6.49"
+  },
+  "bb": {
+    "name": "Plain Paste",
+    "description": "Paste only the text of the clipboard into the message box with ⇧⌘V, so copied text arrives without any attached image.",
+    "branding": {
+      "icon": "ClipboardType"
+    },
+    "server": "./server.ts",
+    "app": "./app.tsx"
+  },
+  "devDependencies": {
+    "@get-bb/plugin-sdk": "0.6.49",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "hono": "^4.13.13",
+    "sonner": "^1.7.4",
+    "typescript": "^5.7.0"
+  },
+  "description": "Paste only the plain text of the clipboard into bb's message box with ⇧⌘V.",
+  "license": "MIT",
+  "author": "Dmitry Makarov",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimiboi/bb-plugin-plain-paste.git"
+  },
+  "scripts": {
+    "test": "node --test",
+    "typecheck": "tsc"
+  }
+}
